@@ -5,8 +5,8 @@ docker push dsknudsen/multi-client:latest
 docker push dsknudsen/multi-server:latest
 docker push dsknudsen/multi-worker:latest
 docker push dsknudsen/multi-client:$SHA
-docker push dsknudsen/multi-server:$SHA
 docker push dsknudsen/multi-worker:$SHA
+docker push dsknudsen/multi-server:$SHA
 kubectl apply -f k8s
 kubectl set image deployments/client-deployment client=dsknudsen/multi-client:$SHA
 kubectl set image deployments/server-deployment server=dsknudsen/multi-server:$SHA
