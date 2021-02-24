@@ -20,10 +20,6 @@ before_install:
   - gcloud container clusters get-credentials multi-kubernetes
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-
-script:
-  - docker run dsknudsen/react-test npm test -- --coverage
-
 deploy:
   provider: script
   script: bash ./deploy.sh
